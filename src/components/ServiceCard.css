@@ -1,0 +1,139 @@
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow), border-color var(--transition-base);
+  animation: fadeUp 0.5s var(--transition-slow) both;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.service-card--blue::before   { background: var(--color-accent); }
+.service-card--gold::before   { background: var(--color-gold); }
+.service-card--teal::before   { background: #0d9488; }
+.service-card--violet::before { background: #7c3aed; }
+.service-card--rose::before   { background: #e11d48; }
+.service-card--green::before  { background: #059669; }
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+.service-card:hover::before { opacity: 1; }
+
+/* Icon */
+.service-card__icon-wrap {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+  flex-shrink: 0;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card__icon-wrap {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.service-card--blue   .service-card__icon-wrap { background: #dce8ff; color: var(--color-accent); }
+.service-card--gold   .service-card__icon-wrap { background: #fef3c7; color: var(--color-gold); }
+.service-card--teal   .service-card__icon-wrap { background: #ccfbf1; color: #0d9488; }
+.service-card--violet .service-card__icon-wrap { background: #ede9fe; color: #7c3aed; }
+.service-card--rose   .service-card__icon-wrap { background: #ffe4e6; color: #e11d48; }
+.service-card--green  .service-card__icon-wrap { background: #d1fae5; color: #059669; }
+
+.service-card__icon-wrap svg { width: 26px; height: 26px; }
+
+/* Body */
+.service-card__body {
+  flex: 1;
+}
+
+.service-card__tagline {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-display);
+}
+
+.service-card--blue   .service-card__tagline { color: var(--color-accent); }
+.service-card--gold   .service-card__tagline { color: var(--color-gold); }
+.service-card--teal   .service-card__tagline { color: #0d9488; }
+.service-card--violet .service-card__tagline { color: #7c3aed; }
+.service-card--rose   .service-card__tagline { color: #e11d48; }
+.service-card--green  .service-card__tagline { color: #059669; }
+
+.service-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+  color: var(--color-ink);
+}
+
+.service-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-ink-3);
+  margin-bottom: var(--space-4);
+}
+
+/* Keywords */
+.service-card__keywords {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: var(--space-5);
+}
+.service-card__keywords li {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-alt);
+  color: var(--color-ink-3);
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+/* CTA */
+.service-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: gap var(--transition-base), color var(--transition-fast);
+  margin-top: auto;
+}
+
+.service-card--blue   .service-card__cta { color: var(--color-accent); }
+.service-card--gold   .service-card__cta { color: var(--color-gold); }
+.service-card--teal   .service-card__cta { color: #0d9488; }
+.service-card--violet .service-card__cta { color: #7c3aed; }
+.service-card--rose   .service-card__cta { color: #e11d48; }
+.service-card--green  .service-card__cta { color: #059669; }
+
+.service-card:hover .service-card__cta { gap: 10px; }

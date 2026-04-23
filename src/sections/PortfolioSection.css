@@ -1,0 +1,194 @@
+.portfolio-section { background: var(--color-bg-alt); }
+
+/* Header */
+.portfolio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+  flex-wrap: wrap;
+}
+
+/* Filters */
+.portfolio-filters {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.portfolio-filter {
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink-3);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  letter-spacing: 0.02em;
+}
+
+.portfolio-filter:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.portfolio-filter.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+/* Card */
+.project-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  animation: fadeUp 0.5s var(--transition-slow) both;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.project-card__header {
+  padding: var(--space-6);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--project-accent) 10%, white),
+    color-mix(in srgb, var(--project-accent) 5%, white)
+  );
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Fallback for browsers without color-mix */
+@supports not (background: color-mix(in srgb, red, white)) {
+  .project-card__header { background: var(--color-bg-alt); }
+}
+
+.project-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.project-card__category {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.7);
+  color: var(--color-ink-2);
+  border: 1px solid var(--color-border);
+}
+
+.project-card__body {
+  padding: var(--space-6);
+  flex: 1;
+}
+
+.project-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+  color: var(--color-ink);
+}
+
+.project-card__desc {
+  font-size: 0.87rem;
+  line-height: 1.7;
+  color: var(--color-ink-3);
+  margin-bottom: var(--space-4);
+}
+
+.project-card__metrics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.project-card__metric {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-ink-2);
+  font-family: var(--font-display);
+}
+
+.project-card__metric-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.project-card__footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.project-card__tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-alt);
+  color: var(--color-ink-3);
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+  border: 1px solid var(--color-border);
+}
+
+/* CTA */
+.portfolio-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  padding-top: var(--space-4);
+}
+
+.portfolio-cta p {
+  font-size: 1rem;
+  color: var(--color-ink-2);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-header { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 640px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+}
