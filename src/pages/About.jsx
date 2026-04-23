@@ -80,7 +80,7 @@ export default function About() {
                   { num: '5★', label: 'Client Rating' },
                 ].map(s => (
                   <div className="about-bio__stat" key={s.label}>
-                    <span className="about-bio__stat-num">{s.num}</span>
+                    <span className="about-bio__stat-num" style={s.num === '5★' ? { color: "#f0c060" } : {}}>{s.num}</span>
                     <span className="about-bio__stat-label">{s.label}</span>
                   </div>
                 ))}
