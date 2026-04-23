@@ -74,8 +74,8 @@ export default function About() {
               </div>
               <div className="about-bio__stats-col">
                 {[
-                  { num: '20+', label: 'Projects Delivered' },
-                  { num: '6+', label: 'Years Experience' },
+                  { num: '100+', label: 'Projects Delivered' },
+                  { num: '20+', label: 'Years Experience' },
                   { num: '100%', label: 'Remote Ready' },
                   { num: '5★', label: 'Client Rating' },
                 ].map(s => (
