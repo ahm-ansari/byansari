@@ -5,6 +5,8 @@ import ServiceCard from '../components/ServiceCard';
 import { SERVICES_DATA } from '../data/services';
 import './Home.css';
 import ReactGA from "react-ga4";
+import ReactDOM from 'react-dom/client';
+import TagManager from 'react-gtm-module';
 
 /* ── Lazy sections ── */
 const PortfolioSection = lazy(() => import('../sections/PortfolioSection'));
@@ -16,13 +18,20 @@ ReactGA.initialize("G-6T1T116QN4");
 // Send a pageview
 ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 
+
+
+const tagManagerArgs = {
+    gtmId: process.env.REACT_APP_GTM_ID
+};
+
+if (tagManagerArgs.gtmId) {
+    TagManager.initialize(tagManagerArgs);
+}
+
 export default function Home() {
   return (
     
     <main>
-      
-    <GoogleTagManager gtmId="GTM-KHXFV6PK" />
-    <GoogleAnalytics gaId="G-6T1T116QN4" />
       <SEO
         title="Freelance Web Developer, ML & AI Engineer"
         description="By Ansari offers expert freelance services in Website Development, Web Application Development, Data Analysis, Machine Learning, Generative AI, and RAG solutions. Build your smart digital future today."
