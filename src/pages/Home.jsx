@@ -4,15 +4,23 @@ import SEO from '../components/SEO';
 import ServiceCard from '../components/ServiceCard';
 import { SERVICES_DATA } from '../data/services';
 import './Home.css';
-import { GoogleTagManager, GoogleAnalytics  } from '@next/third-parties/google'
+import ReactGA from "react-ga4";
 
 /* ── Lazy sections ── */
 const PortfolioSection = lazy(() => import('../sections/PortfolioSection'));
 const StatsSection = lazy(() => import('../sections/StatsSection'));
 
+// Initialize with your Measurement ID (e.g., G-XXXXXXXXXX)
+ReactGA.initialize("G-6T1T116QN4");
+
+// Send a pageview
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+
 export default function Home() {
   return (
+    
     <main>
+      
     <GoogleTagManager gtmId="GTM-KHXFV6PK" />
     <GoogleAnalytics gaId="G-6T1T116QN4" />
       <SEO
