@@ -30,8 +30,8 @@ export default function SEO({
       {/* Primary Meta */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
       <meta name="google-site-verification" content={googleVerify} />
+      {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonical} />
       <meta name="author" content="By Ansari" />
       <meta name="robots" content="index, follow" />
