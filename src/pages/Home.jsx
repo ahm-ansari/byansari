@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 import ServiceCard from '../components/ServiceCard';
 import { SERVICES_DATA } from '../data/services';
 import './Home.css';
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager, GoogleAnalytics  } from '@next/third-parties/google'
 
 /* ── Lazy sections ── */
 const PortfolioSection = lazy(() => import('../sections/PortfolioSection'));
@@ -14,6 +14,7 @@ export default function Home() {
   return (
     <main>
     <GoogleTagManager gtmId="G-6T1T116QN4" />
+    <GoogleAnalytics gaId="G-6T1T116QN4" />
       <SEO
         title="Freelance Web Developer, ML & AI Engineer"
         description="By Ansari offers expert freelance services in Website Development, Web Application Development, Data Analysis, Machine Learning, Generative AI, and RAG solutions. Build your smart digital future today."
