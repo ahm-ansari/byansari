@@ -18,6 +18,7 @@ export default function SEO({
   title,
   description,
   keywords = '',
+  googleVerify,
   canonicalPath = '/',
   ogImage = SITE_IMAGE,
 }) {
@@ -30,6 +31,7 @@ export default function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="google-site-verification" content={googleVerify} />
       <link rel="canonical" href={canonical} />
       <meta name="author" content="By Ansari" />
       <meta name="robots" content="index, follow" />
