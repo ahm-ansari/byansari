@@ -13,7 +13,7 @@ const StatsSection = lazy(() => import('../sections/StatsSection'));
 export default function Home() {
   return (
     <main>
-    <GoogleTagManager gtmId="G-6T1T116QN4" />
+    <GoogleTagManager gtmId="GTM-KHXFV6PK" />
     <GoogleAnalytics gaId="G-6T1T116QN4" />
       <SEO
         title="Freelance Web Developer, ML & AI Engineer"
