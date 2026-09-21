@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'By Ansari';
-const SITE_URL  = 'https://byansari.dev';
+const SITE_URL  = 'https://byansari.vercel.app';
 const SITE_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 /**
