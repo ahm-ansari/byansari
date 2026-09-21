@@ -19,6 +19,7 @@ export default function Home() {
         title="Freelance Web Developer, ML & AI Engineer"
         description="By Ansari offers expert freelance services in Website Development, Web Application Development, Data Analysis, Machine Learning, Generative AI, and RAG solutions. Build your smart digital future today."
         keywords="freelance web developer, machine learning engineer, generative AI developer, RAG solutions, data analysis, React developer, AI consultant"
+        googleVerify="3ic83BBejbnZXrJhvZ9AjCj2KKDmbgqot8oHpLaJTME"
         canonicalPath="/"
       />
 
